@@ -2,14 +2,17 @@ language: python
 sudo: required
 dist: trusty
 python: '3.6'
-
 cache:
-  - pip
-
+- pip
 install:
-  - pip install pipenv==8.3.2
-  - pipenv install --dev
-
+- pip install pipenv
+- pipenv install --dev
 script:
-  - make test
-
+- make test
+deploy:
+  provider: pypi
+  user: purplebooth
+  on:
+    tags: true
+  password:
+    secure: AwfFKVpK0OxO0uAEnP8meeK/qkn5cTP8gWqCRRWL/6y3B1TlsjNUBhaeOyksP2/DvzyuqyqLXX5GLf2F4s+6W68HYdChDNN1nx28d3hoMWoCMvLEDmNfCJ2NY7AkEQ17LUWwMbYTZPZK0s/Una/ojYBU1QbVfM3OKZrLUv2ZVnCyillDpZaPOvXHRQIg0dZ49vf/z0CDj1aQAowY6+5jR4WS+FZ8tFCANfiIosVjx6cbFfry0c1BzDkcH+eUJe+YmvZVhVPrXnqjeoskyui3vI6uzh36cSo7wgc/2VRUM29atDPAvT2vBCxT2lqCIxBYQqnfTqApUo83heVHw2HCpniTbs5MXfrFtEMWLK+Fhj7oe9l5jknevlE/PJgiKFRa5mISJFdTvJ7tkx4VQuCo6b5oVTs/1fIcdntgOJu4ceApO1uqVTBE7B+YLHLfZHSzMqIWpBvSf8TmxzAjtGvGNfjLXJMrG0PKaKZFlX00jF0QMcEb0huKyAKaJSpiiasxffFz0fmYVzSjk3kowFQp/mX/tEOf0Y1ZxRPIinuss4pKN7h1rvvWHr4xZ9BL+7NPaIv7140s/tHO2U1DyrElX+b/apw+MovFBdLUTGee4hQcUDKDGJQXV7MHrhn0HCREL7EpmWvw++xvU22eGF0Rb372YoagwpB7LmPQgWcF0xk=

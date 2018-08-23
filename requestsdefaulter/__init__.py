@@ -1,5 +1,7 @@
 import requests
 
+name = "requestsdefaulter"
+
 
 def default_headers(default_functions):
     original_prepare_headers = requests.models.PreparedRequest.prepare_headers
